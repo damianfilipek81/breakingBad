@@ -1,0 +1,17 @@
+  
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: rgb(130, 130, 189);
+  line-height: 1.7;
+  letter-spacing: 0.5px;
+  overflow-y: scroll;
+}
+
+a, a:hover, a:visited {
+  text-decoration: none;
+}
