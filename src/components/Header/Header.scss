@@ -1,0 +1,36 @@
+@-webkit-keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.logo {
+  width: 80px;
+  padding: 5px;
+  cursor: pointer;
+
+  &:hover {
+    -webkit-animation: rotate-center 1s ease-in-out both;
+    animation: rotate-center 1s ease-in-out both;
+  }
+}
+
+.component {
+  background-image: url("../../images/background.png");
+  background-size: contain;
+}

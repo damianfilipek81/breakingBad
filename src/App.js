@@ -1,9 +1,14 @@
 import React from 'react';
+import Header from './components/Header/Header';
 
-const App = (state) => (
-  <div>
-    Hello
-  </div>
-)
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <Header />
+      </div>
+    )
+  }
+}
 
 export default App;
