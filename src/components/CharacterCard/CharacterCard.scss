@@ -1,24 +1,108 @@
-.component{
+@-webkit-keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+@keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes scale-out-center {
+  0% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes scale-out-center {
+  0% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.component {
   display: flex;
-  flex: 0 0 24%;
+  flex: 0 0 20%;
   padding: 3px;
   justify-content: center;
   flex-wrap: wrap;
   min-width: 200px;
-  margin: 5px;
+  margin: 24px 15px;
+  -webkit-animation: scale-out-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: scale-out-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
-.imageWrapper{
+.activeComponent {
+  @extend .component;
+  z-index: 33;
+  -webkit-animation: scale-in-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: scale-in-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.imageWrapper {
   width: 100%;
-  height: 300px;  
+  height: 300px;
 }
 
-.image{
+.image {
   object-fit: cover;
   width: 100%;
   height: 100%;
 }
 
-.title{
+.title {
   margin: 10px;
+}
+
+.dropdown {
+  display: none;
+}
+
+.activeDropdown {
+  display: block;
+}
+
+.description {
+  padding-top: 12px;
+  font-size: 15px;
+  position: relative;
+  &:after{
+    height: 3px;
+    width: 50%;
+    border-radius: 5px;
+    text-align: center;
+    content: ' ';
+    background: rgb(105, 101, 101);
+    position: absolute;
+    top: 5px;
+    left: 0;
+    transform: translateX(50%);
+  }
 }

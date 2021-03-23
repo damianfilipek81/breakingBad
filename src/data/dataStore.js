@@ -5,4 +5,6 @@ export const settings = {
   logo: logo,
   background: background,
   alt: '',
+  heartIcon: 'heart',
+  shareIcon: 'share-alt',
 }
