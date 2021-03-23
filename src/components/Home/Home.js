@@ -5,7 +5,7 @@ import Container from '../Container/Container';
 import CharacterCard from '../CharacterCard/CharacterCard';
 
 const Home = ({ characters }) => (
-  <main className={styles.component}>
+  <main className={styles.component} >
     <Container>
       <h1 className={styles.title}>Breaking Bad's characters</h1>
       <div className={styles.wrapper}>

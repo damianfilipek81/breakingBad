@@ -7,12 +7,14 @@ import { NavLink, Link } from 'react-router-dom';
 import Button from '../Button/Button';
 
 const Header = () => (
-  <header
-  className={styles.component}>
+  <header>
     <Container>
-      <img src={settings.logo} alt={settings.alt} className={styles.logo}></img>
+      <Link to={'/'}><img src={settings.logo} alt={settings.alt} className={styles.logo}></img></Link>
+      <Link to={'/betterCallSaul'}><img src={settings.logoBCS} alt={settings.alt} className={styles.logo}></img></Link>
       <div className={styles.nav}>
-        <Button>Info</Button>
+        <nav>
+          <NavLink to='/info'>Info</NavLink>
+        </nav>
       </div>
     </Container>
   </header>
