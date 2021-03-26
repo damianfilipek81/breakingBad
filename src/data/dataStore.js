@@ -9,4 +9,6 @@ export const settings = {
   alt: '',
   heartIcon: 'heart',
   shareIcon: 'share-alt',
+  breakingBadTitle: "Breaking Bad's characters",
+  betterCallSaulTitle: "Better Call Saul's characters",
 }

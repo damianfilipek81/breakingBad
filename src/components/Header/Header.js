@@ -1,23 +1,23 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { settings } from '../../data/dataStore';
 import styles from './Header.scss';
 import Container from '../../components/Container/Container';
 import { NavLink, Link } from 'react-router-dom';
-import Button from '../Button/Button';
 
 const Header = () => (
-  <header>
-    <Container>
-      <Link to={'/'}><img src={settings.logo} alt={settings.alt} className={styles.logo}></img></Link>
-      <Link to={'/betterCallSaul'}><img src={settings.logoBCS} alt={settings.alt} className={styles.logo}></img></Link>
-      <div className={styles.nav}>
-        <nav>
-          <NavLink to='/info'>Info</NavLink>
-        </nav>
+  <Container>
+    <header className={styles.wrapper}>
+      <div className={styles.wrapper}>
+        <Link to={'/'}><img src={settings.logo} alt={settings.alt} className={styles.logo}></img></Link>
+        <Link to={'/betterCallSaul'}><img src={settings.logoBCS} alt={settings.alt} className={styles.logo}></img></Link>
       </div>
-    </Container>
-  </header>
+      <nav>
+        <NavLink to='/favorites' className={styles.button}>Favorites</NavLink>
+        <NavLink to='/info' className={styles.button}>Info</NavLink>
+        <NavLink to='/faq' className={styles.button}>FAQ</NavLink>
+      </nav>
+    </header>
+  </Container>
 )
 
 Header.propTypes = {

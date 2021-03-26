@@ -1,10 +1,11 @@
 import React from 'react';
-import BetterCallSaul from './components/BetterCallSaul/BetterCallSaulContainer';
+import BetterCallSaulHome from './components/BetterCallSaulHome/BetterCallSaulHomeContainer';
+import BreakingBadHome from './components/BreakingBadHome/BreakingBadHomeContainer';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { AnimatedSwitch } from 'react-router-transition';
 import MainLayout from './components/MainLayout/MainLayout';
 import Info from './components/Info/Info';
-import Home from './components/Home/HomeContainer';
+import Favorites from './components/Favorites/FavoritesContainer';
 
 class App extends React.Component {
   render() {
@@ -16,9 +17,10 @@ class App extends React.Component {
             atLeave={{ opacity: 0 }}
             atActive={{ opacity: 1 }}
             >
-            <Route exact path='/' component={Home} />
-            <Route exact path='/betterCallSaul' component={BetterCallSaul} />
+            <Route exact path='/' component={BreakingBadHome} />
+            <Route exact path='/betterCallSaul' component={BetterCallSaulHome} />
             <Route exact path='/info' component={Info} />
+            <Route exact path='/favorites' component={Favorites} />
           </AnimatedSwitch >
         </MainLayout>
       </BrowserRouter>

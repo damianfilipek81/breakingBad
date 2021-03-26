@@ -2,6 +2,7 @@ import { combineReducers, createStore, applyMiddleware } from 'redux';
 import thunkMiddleware from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import axios from 'axios';
+import favoritesReducer from './favoritesRedux';
 
 export function charactersReducer(state = initialState.characters, action) {
   switch (action.type) {
@@ -20,11 +21,13 @@ export async function fetchCharacters(dispatch) {
 
 export const initialState = {
   characters: [],
+  favorites: [],
 }
 
 
 const reducers = {
   characters: charactersReducer,
+  favorites: favoritesReducer,
 }
 
 Object.keys(initialState).forEach(item => {
@@ -37,6 +40,7 @@ const storeReducer = combineReducers(reducers);
 
 const store = createStore(
   storeReducer,
+  initialState,
   composeWithDevTools(applyMiddleware(thunkMiddleware))
 );
 

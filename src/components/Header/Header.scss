@@ -29,3 +29,19 @@
     animation: rotate-center 1s ease-in-out both;
   }
 }
+
+.button {
+  padding: 5px 10px;
+  background: white;
+  border-radius: 5px;
+  margin: 0 5px;
+  &:hover{
+    background: red;
+  }
+}
+
+.wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

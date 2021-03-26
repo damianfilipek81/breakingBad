@@ -12,12 +12,23 @@ import Typography from '@material-ui/core/Typography';
 import Icon from '../Icon/Icon';
 import CharacterCardDropdown from './CharacterCardDropdown';
 
-const CharacterCard = ({ name, img, nickname, birthday, status, occupation }) => {
+const CharacterCard = ({ name, img, nickname, birthday, status, occupation, addFavoriteCharacter, removeFavoriteCharacter }) => {
   const [isActive, setActive] = useState("false");
+  const [isFavorite, setFavorite] = useState("false");
 
   const handleToggle = () => {
     setActive(!isActive);
   };
+
+  const handleFavoritesCharacters = () => {
+    setFavorite(!isFavorite);
+    if (isFavorite) {
+      addFavoriteCharacter(name)
+    } else {
+      removeFavoriteCharacter(name)
+    }
+
+  }
 
   return (
     <Card className={isActive ? styles.component : styles.activeComponent}>
@@ -45,7 +56,7 @@ const CharacterCard = ({ name, img, nickname, birthday, status, occupation }) =>
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button><Icon name={settings.heartIcon}></Icon></Button>
+        <Button onClick={() => handleFavoritesCharacters()} className={isFavorite ? null : styles.activeIcon}><Icon name={settings.heartIcon}></Icon></Button>
         <Button><Icon name={settings.shareIcon}></Icon></Button>
       </CardActions>
     </Card>
@@ -59,6 +70,8 @@ CharacterCard.propTypes = {
   birthday: PropTypes.string,
   status: PropTypes.string,
   occupation: PropTypes.array,
+  addFavoriteCharacter: PropTypes.func,
+  removeFavoriteCharacter: PropTypes.func,
 }
 
 export default CharacterCard;
