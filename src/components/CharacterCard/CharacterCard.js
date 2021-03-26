@@ -36,8 +36,8 @@ const CharacterCard = ({ name, img, nickname, birthday, status, occupation, addF
         <div className={styles.imageWrapper}>
           <CardMedia
             className={styles.image}
-            image={img}
-            title={settings.alt}
+            component="img"
+            src={img}
           />
         </div>
         <CardContent>

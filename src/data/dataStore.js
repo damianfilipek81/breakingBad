@@ -11,4 +11,5 @@ export const settings = {
   shareIcon: 'share-alt',
   breakingBadTitle: "Breaking Bad's characters",
   betterCallSaulTitle: "Better Call Saul's characters",
+  favoritesTitle: 'Favorites characters'
 }

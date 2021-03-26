@@ -5,7 +5,7 @@ import {settings} from '../../data/dataStore';
 
 const Favorites = ({characters}) => (
   <div>
-    <Home characters={characters} title={settings.breakingBadTitle}></Home>
+    <Home characters={characters} title={settings.favoritesTitle}></Home>
   </div>
 )
 
