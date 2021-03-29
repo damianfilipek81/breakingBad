@@ -12,7 +12,7 @@ import Typography from '@material-ui/core/Typography';
 import Icon from '../Icon/Icon';
 import CharacterCardDropdown from './CharacterCardDropdown';
 
-const CharacterCard = ({ name, img, nickname, birthday, status, occupation, addFavoriteCharacter, removeFavoriteCharacter }) => {
+const CharacterCard = ({ name, img, nickname, birthday, status, occupation, addFavoriteCharacter, removeFavoriteCharacter, classProps, childRef }) => {
   const [isActive, setActive] = useState("false");
   const [isFavorite, setFavorite] = useState("false");
 
@@ -31,7 +31,7 @@ const CharacterCard = ({ name, img, nickname, birthday, status, occupation, addF
   }
 
   return (
-    <Card className={isActive ? styles.component : styles.activeComponent}>
+    <Card ref={childRef} className={`${isActive ? styles.component : styles.activeComponent} ${classProps == true ? styles.dead : styles.component}`}>
       <CardActionArea onClick={handleToggle}>
         <div className={styles.imageWrapper}>
           <CardMedia
@@ -72,6 +72,8 @@ CharacterCard.propTypes = {
   occupation: PropTypes.array,
   addFavoriteCharacter: PropTypes.func,
   removeFavoriteCharacter: PropTypes.func,
+  classProps: PropTypes.bool,
+  childRef: PropTypes.any,
 }
 
 export default CharacterCard;

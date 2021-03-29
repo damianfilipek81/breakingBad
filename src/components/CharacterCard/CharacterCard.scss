@@ -93,12 +93,12 @@
   padding-top: 12px;
   font-size: 15px;
   position: relative;
-  &:after{
+  &:after {
     height: 3px;
     width: 50%;
     border-radius: 5px;
     text-align: center;
-    content: ' ';
+    content: " ";
     background: rgb(105, 101, 101);
     position: absolute;
     top: 5px;
@@ -107,6 +107,12 @@
   }
 }
 
-.activeIcon{
+.activeIcon {
   background: red !important;
+}
+
+.dead {
+  background: red !important;
+  pointer-events: none;
+  filter: brightness(50%);
 }
